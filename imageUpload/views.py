@@ -24,7 +24,7 @@ class ImageUploadView(APIView):
             name = serializer.validated_data['image'].name
             file_name, ext = os.path.splitext(name)
             now = datetime.now()
-            date_time = now.strftime("%Y%m$d%H%M%S")
+            date_time = now.strftime("%Y%m%d%H%M%S")
             custom_file_name = "CN"+date_time+ext
             serializer.validated_data['image'].name = custom_file_name
             serializer.save()
